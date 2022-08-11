@@ -38,6 +38,21 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     console.log(this.squares);
   }
 
+  public Clicked(x: number, y: number): void {
+    if (this.isToMove(x, y) == true)
+    {
+      this.knightChild.setXY(x, y);
+      this.changeToUnMoveTo(x, y);
+      this.cdr$.detectChanges();
+    }
+    else
+    {
+      this.isKnight(x, y);
+      this.cdr$.detectChanges();
+    }
+    
+  }
+
   public changeToPicked(x: number, y: number): void {
     this.squares[x][y].isSelected = true;
 
@@ -68,17 +83,30 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     this.cdr$.detectChanges();
   }
 
-  public isStartPosition(x: number, y: number) : boolean {
-    if (x == 5)
+  public changeToUnMoveTo(x: number, y: number): void {
+    for (let i: number = 0; i < 10; i++)
     {
-      if (y == 5)
+      for (let j: number = 0; j < 10; j++)
       {
-        return true;
+        this.squares[i][j].isSelected = false;
       }
-      else
+    }
+
+    for (let i: number = 0; i < 10; i++)
+    {
+      for (let j: number = 0; j < 10; j++)
       {
-        return false;
+        this.squares[i][j].isToMove = false;
       }
+    }
+
+    this.cdr$.detectChanges();
+  }
+
+  public isStartPosition(x: number, y: number) : boolean {
+    if (this.knightChild.x == x && this.knightChild.y == y)
+    {
+      return true;
     }
     else
     {
@@ -93,8 +121,14 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   public isKnight(x: number, y: number): boolean {
     if (this.knightChild.isKnight(x, y))
     {
-      this.changeToPicked(x, y);
-      console.log("Knight picked.");  
+      if (this.squares[x][y].isSelected == false)
+      {
+        this.changeToPicked(x, y); 
+      }      
+      else
+      {
+        this.changeToUnMoveTo(x, y);
+      }
       return true;
     }
     else
