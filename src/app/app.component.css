@@ -1,0 +1,182 @@
+.main-container {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    left: 0px;
+    top: 0px;
+    background-image: url("../static/img/backgroundimg.jpg");
+}
+
+.board {
+    position: absolute;
+    width: 780px;
+    height: 780px;
+    margin-top: 126px;
+    margin-left: 40px;
+    background: linear-gradient(180deg, #AAC2FF 0%, #C81BF1 100%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(101px);
+    border-radius: 20px;
+}
+
+.play-container {
+    position: absolute;
+    width: 860px;
+    height: 946px;
+    left: 530px;
+    top: 72px;
+    background: linear-gradient(111.49deg, rgba(255, 255, 255, 0.4) -8.95%, rgba(255, 255, 255, 0.01) 114%);
+    backdrop-filter: blur(100px);
+    border: solid 2px;
+    border-color: white;
+    border-radius: 25px;
+}
+
+#size-box {
+    position: absolute;
+    width: 127px;
+    height: 72px;
+    left: 40px;
+    top: 30px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 72px;
+
+    text-align: center;
+    text-transform: capitalize;
+
+    background: linear-gradient(180deg, #296399 54.68%, rgba(255, 255, 255, 0) 187.46%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;  
+}
+
+.square-table {
+    margin: 4px;
+}
+
+#stepback-button {
+    position: absolute;
+    width: 191px;
+    height: 45px;;
+    left: 412px;
+    top: 42px;
+    border-style: none;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #265DC7;
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+}
+
+#stepback-button:hover {
+    position: absolute;
+    width: 191px;
+    height: 45px;;
+    left: 412px;
+    top: 42px;
+    border-style: none;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #265DC7;
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+}
+
+#restart-button {
+    position: absolute;
+    left: 628px;
+    width: 191px;
+    height: 45px;
+    top: 42px;
+    text-align: center;
+    border-style: none;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F96E03;
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+}
+
+#restart-button:hover {
+    position: absolute;
+    left: 628px;
+    width: 191px;
+    height: 45px;
+    top: 42px;
+    text-align: center;
+    border-style: none;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #F96E03;
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+}
+
+#stepback-text {
+    position: absolute;
+    left: 26.54%;
+    right: 27.02%;
+    top: 18.18%;
+    bottom: 20.62%;
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #B6F6FF;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    
+   
+}
+
+#restart-text {
+    position: absolute;
+    left: 32%;
+    right: 27.02%;
+    top: 18.18%;
+    bottom: 20.62%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 16px;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FFEED8;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
+}
+
+#blue-ellipse {
+    shape-outside: ellipse();
+    clip-path: circle();
+    position: absolute;
+    width: 428px;
+    height: 428px;
+    left: 300px;
+    top: 100px;
+    background: linear-gradient(90deg, #FC00FF 0%, #00DBDE 100%);
+    transform: rotate(-105deg);
+}
+
+#yellow-ellipse {
+    shape-outside: ellipse();
+    clip-path: circle();
+    position: absolute;
+    width: 380px;
+    height: 380px;
+    left: 1226px;
+    top: 650px;
+
+    background: linear-gradient(90deg, #E65C00 0%, #F9D423 100%);
+}
+
