@@ -1,6 +1,4 @@
 import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2, ViewChild } from '@angular/core';
-import { EnemyPieceComponent } from '../enemy-piece/enemy-piece.component';
-import { KnightComponent } from '../knight/knight.component';
 import { Square } from '../square';
 
 @Component({
@@ -13,10 +11,6 @@ import { Square } from '../square';
 
 export class SquaresComponent implements OnInit, AfterViewInit {
 
-  public xEnemy?: number;
-  public yEnemy?: number;
-  @ViewChild(EnemyPieceComponent) public enemyChild: EnemyPieceComponent = new EnemyPieceComponent;
-  @ViewChild(KnightComponent) public knightChild: KnightComponent = new KnightComponent;
   
   
   public squares: Square[][];
@@ -33,6 +27,14 @@ export class SquaresComponent implements OnInit, AfterViewInit {
         this.squares[i][j].y = j;
         this.squares[i][j].isSelected = false;
         this.squares[i][j].isToMove = false;
+        if (i == 2 && j == 3)
+        {     
+          this.squares[i][j].isEnemy = true;
+        }
+        if (i == 5 && j == 9)
+        {
+          this.squares[i][j].isKnight = true;
+        }
       }
     }
     console.log(this.squares);
@@ -41,7 +43,14 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   public Clicked(x: number, y: number): void {
     if (this.isToMove(x, y) == true)
     {
-      this.knightChild.setXY(x, y);
+      for (let i: number = 0; i < 10; i++)
+      {
+        for (let j: number = 0; j < 10; j++)
+        {
+          this.squares[i][j].isKnight = false;
+        }
+      }
+      this.squares[x][y].isKnight = true;
       this.changeToUnMoveTo(x, y);
       this.cdr$.detectChanges();
     }
@@ -104,7 +113,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   }
 
   public isStartPosition(x: number, y: number) : boolean {
-    if (this.knightChild.x == x && this.knightChild.y == y)
+    if (this.squares[x][y].isKnight == true)
     {
       return true;
     }
@@ -115,11 +124,18 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   }
 
   public isEnemy(x: number, y: number): boolean {
-    return this.enemyChild.isEnemy(x,y);
+    if (this.squares[x][y].isEnemy == true)
+    {
+      return true;
+    }
+    else
+    {
+      return false;
+    }
   }
   
   public isKnight(x: number, y: number): boolean {
-    if (this.knightChild.isKnight(x, y))
+    if (this.squares[x][y].isKnight == true)
     {
       if (this.squares[x][y].isSelected == false)
       {

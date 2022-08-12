@@ -3,8 +3,16 @@
         <td *ngFor="let x of [0,1,2,3,4,5,6,7,8,9]">
             <div><button class="square-field" (click) = "Clicked(x, y)">
                 <div class="isToMove" *ngIf="isToMove(x,y)"></div>
-                <div *ngIf="isEnemy(x,y)"><app-enemy-piece></app-enemy-piece></div>
-                <div *ngIf="isStartPosition(x, y)"><app-knight ></app-knight></div>
+                <div *ngIf="isEnemy(x,y)">
+                    <div class="enemy-piece">
+                        <div class="enemy-text">999</div>
+                    </div>                    
+                </div>
+                <div *ngIf="isStartPosition(x, y)">
+                    <div class="knight">
+                        <div class="knight-text">999</div>
+                    </div>
+                </div>
             </button></div>
         </td>
     </tr>

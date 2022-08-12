@@ -3,5 +3,6 @@ export class Square {
     y?: number;
     isSelected?: boolean;
     isToMove?: boolean;
-
+    isKnight?: boolean;
+    isEnemy?: boolean;
 }

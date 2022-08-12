@@ -46,6 +46,65 @@ li {
     background: linear-gradient(180deg, #FFB800 0%, #FF1F00 100%);
 }
 
+.knight {
+    box-sizing: border-box;
+    position: absolute;
+    left: 6px;
+    width: 48px;
+    height: 48px;
+    right: 0%;
+    top: 6px;
+    bottom: 0%;
+    background: linear-gradient(180deg, #FFB800 0%, #FF1F00 100%);
+    shape-outside: ellipse();
+    clip-path: circle();
+}
 
+.knight-text {
+    position: absolute;
+    left: 0%;
+    right: 0%;
+    top: 22.92%;
+    bottom: 20.83%;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 27px;
+/* identical to box height */
+    text-align: center;
+    color: #FFFFFF;
+}
 
+.enemy-piece {
+    position: absolute;
+    left: 20.31%;
+    right: 20.96%;
+    top: 20.31%;
+    bottom: 20.93%;
+
+    background: linear-gradient(220.53deg, #B2F763 0%, #26AB3F 76.95%);
+    box-shadow: 6px -6px 16px rgba(178, 247, 99, 0.2);
+    shape-outside: ellipse();
+    clip-path: circle();
+}
+
+.enemy-text {
+    position: absolute;
+    left: 14.31%;
+    right: 20.31%;
+    top: 18.25%;
+    bottom: 31.25%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    /* identical to box height */
+
+    text-align: center;
+
+    color: #FFFFFF;
+}
 
