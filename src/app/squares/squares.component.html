@@ -1,4 +1,5 @@
 <table class="squares">
+    <app-stepback></app-stepback>
     <app-restart></app-restart>
     <tr *ngFor="let y of [0,1,2,3,4,5,6,7,8,9]">
         <td *ngFor="let x of [0,1,2,3,4,5,6,7,8,9]">
@@ -15,6 +16,7 @@
                     </div>
                 </div>
             </button></div>
+            <div *ngIf="checkForWin(x,y)"><app-win-window></app-win-window></div>
             <div *ngIf="checkForLose(x,y)"><app-lose-window></app-lose-window></div>
         </td>
     </tr>

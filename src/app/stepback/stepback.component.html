@@ -1,0 +1,6 @@
+<button *ngIf="checkForFirstMove()" id="stepback-button-locked">
+    <div id="stepback-text">STEP BACK</div>
+  </button>
+  <button *ngIf="checkIsNotFirstMove()" id="stepback-button" (click)="stepback()">
+    <div id="stepback-text">STEP BACK</div>
+  </button>

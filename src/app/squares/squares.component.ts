@@ -16,7 +16,12 @@ export class SquaresComponent implements OnInit, AfterViewInit {
 
   
   public isFirstMove = true;
+  public isSecondMove = false;
   public squares: Square[][];
+  public prevX: number = 0;
+  public prevY: number = 0;
+  public KnightX: number = 0;
+  public KnightY: number = 0;
 
   constructor(private readonly cdr$: ChangeDetectorRef) {
     this.squares = new Array(10);
@@ -34,10 +39,19 @@ export class SquaresComponent implements OnInit, AfterViewInit {
         this.squares[i][j].isKnight = false;
       }
     }
-    console.log(this.squares);
   }
 
+  public checkForFirstMove(): boolean {
+    return this.isFirstMove;
+  } 
+
   public Clicked(x: number, y: number): void {
+    if (this.isSecondMove == true)
+    {
+      this.isSecondMove = false;
+    }
+    this.prevX = this.KnightX;
+    this.prevY = this.KnightY;
     if (this.isToMove(x, y) == true && this.squares[x][y].isEnemy == false)
     {
       for (let i: number = 0; i < 10; i++)
@@ -48,6 +62,8 @@ export class SquaresComponent implements OnInit, AfterViewInit {
         }
       }
       this.squares[x][y].isKnight = true;
+      this.KnightX = x;
+      this.KnightY = y;
       this.changeToUnMoveTo(x, y);
       this.cdr$.detectChanges();
     }
@@ -62,11 +78,28 @@ export class SquaresComponent implements OnInit, AfterViewInit {
       if (this.isFirstMove)
       {
         this.squares[x][y].isKnight = true;
+        this.KnightX = x;
+        this.KnightY = y;
         this.isFirstMove = false;
+        this.isSecondMove = true;
         this.cdr$.detectChanges();
-      }
+      } 
     }
     
+  }
+
+  public stepback(): void {
+    if (this.isFirstMove == false && this.isSecondMove == false)
+    {
+      this.changeToUnMoveTo(0, 0);
+      this.squares[this.KnightX][this.KnightY].isKnight = false;
+      this.squares[this.prevX][this.prevY].isKnight = true;
+      this.squares[this.KnightX][this.KnightY].isEnemy = false;
+      this.KnightX = this.prevX;
+      this.KnightY = this.prevY;
+      this.changeToPicked(this.prevX, this.prevY);
+      this.cdr$.detectChanges();
+    }
   }
 
   public restart(): void {
@@ -84,67 +117,93 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     this.cdr$.detectChanges();
   }
 
+  public checkForWin(x: number, y: number): boolean {
+    let isWin: boolean = true;
+    for (let i: number = 0; i < 10; i++)
+    {
+      for (let j: number = 0; j < 10; j++)
+      {
+        if (this.squares[i][j].isEnemy == false && i != x && j != y)
+        {
+          isWin = false;
+        }
+      }
+    }
+    if (this.squares[x][y].isKnight != true)
+    {
+      isWin = false;
+    }
+    return isWin;
+  }
+
   public checkForLose(x: number, y: number): Boolean {
-    if (this.squares[x][y].isKnight == true)
-      {
-      let isLost: Boolean = true;
-      if (x - 2 >= 0 && y + 1 <=9)
-      {
-        if (this.squares[x - 2][y + 1].isEnemy == false)
+    if (this.checkForWin(x,y) == false)
+    {
+      if (this.squares[x][y].isKnight == true)
         {
-          isLost = false;
-        }
-      }
-      if (x - 1 >= 0 && y + 2 <= 9)
-      {
-        if (this.squares[x - 1][y + 2].isEnemy == false)
+        let isLost: Boolean = true;
+        if (x - 2 >= 0 && y + 1 <=9)
         {
-          isLost = false;
+          if (this.squares[x - 2][y + 1].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
-      }
-      if (x - 2 >= 0 && y - 1 >= 0)
-      {
-        if (this.squares[x - 2][y - 1].isEnemy == false)
+        if (x - 1 >= 0 && y + 2 <= 9)
         {
-          isLost = false;
+          if (this.squares[x - 1][y + 2].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
-      }
-      if (x - 1 >= 0 && y - 2 >= 0)
-      {
-        if (this.squares[x - 1][y - 2].isEnemy == false)
+        if (x - 2 >= 0 && y - 1 >= 0)
         {
-          isLost = false;
+          if (this.squares[x - 2][y - 1].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
-      }
-      if (x + 2 <= 9 && y + 1 <= 9)
-      {
-      if (this.squares[x + 2][y + 1].isEnemy == false)
+        if (x - 1 >= 0 && y - 2 >= 0)
         {
-          isLost = false;
+          if (this.squares[x - 1][y - 2].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
-      }
-      if (x + 1 <= 9 && y + 2 <= 9)
-      {
-        if (this.squares[x + 1][y + 2].isEnemy == false)
+        if (x + 2 <= 9 && y + 1 <= 9)
         {
-          isLost = false;
+        if (this.squares[x + 2][y + 1].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
-      }
-      if (x + 2 <= 9 && y - 1 >= 0)
-      {
-        if (this.squares[x + 2][y - 1].isEnemy == false)
+        if (x + 1 <= 9 && y + 2 <= 9)
         {
-          isLost = false;
+          if (this.squares[x + 1][y + 2].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
-      }
-      if (x + 1 <= 9 && y - 2 >= 0)
-      {
-        if (this.squares[x + 1][y - 2].isEnemy == false)
+        if (x + 2 <= 9 && y - 1 >= 0)
         {
-          isLost = false;
+          if (this.squares[x + 2][y - 1].isEnemy == false)
+          {
+            isLost = false;
+          }
         }
+        if (x + 1 <= 9 && y - 2 >= 0)
+        {
+          if (this.squares[x + 1][y - 2].isEnemy == false)
+          {
+            isLost = false;
+          }
+        }
+        return isLost;
       }
-      return isLost;
+      else
+      {
+        return false;
+      }
     }
     else
     {
