@@ -83,33 +83,6 @@
     box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
 }
 
-#restart-button {
-    position: absolute;
-    left: 628px;
-    width: 191px;
-    height: 45px;
-    top: 42px;
-    text-align: center;
-    border-style: none;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #F96E03;
-    background-blend-mode: overlay, normal;
-    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
-}
-
-#restart-button:hover {
-    position: absolute;
-    left: 628px;
-    width: 191px;
-    height: 45px;
-    top: 42px;
-    text-align: center;
-    border-style: none;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #F96E03;
-    background-blend-mode: overlay, normal;
-    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
-}
 
 #stepback-text {
     position: absolute;
@@ -131,29 +104,6 @@
     background-clip: text;
     
    
-}
-
-#restart-text {
-    position: absolute;
-    left: 32%;
-    right: 27.02%;
-    top: 18.18%;
-    bottom: 20.62%;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 800;
-    font-size: 16px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FFEED8;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-
 }
 
 #blue-ellipse {

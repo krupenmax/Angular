@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Injectable, OnInit } from '@angular/core';
 import { Square } from '../square';
 
 @Component({
@@ -8,11 +8,14 @@ import { Square } from '../square';
   styleUrls: ['./squares.component.css']
 })
 
+@Injectable({
+  providedIn: 'root'
+})
 
 export class SquaresComponent implements OnInit, AfterViewInit {
 
   
-  
+  public isFirstMove = true;
   public squares: Square[][];
 
   constructor(private readonly cdr$: ChangeDetectorRef) {
@@ -27,21 +30,15 @@ export class SquaresComponent implements OnInit, AfterViewInit {
         this.squares[i][j].y = j;
         this.squares[i][j].isSelected = false;
         this.squares[i][j].isToMove = false;
-        if (i == 2 && j == 3)
-        {     
-          this.squares[i][j].isEnemy = true;
-        }
-        if (i == 5 && j == 9)
-        {
-          this.squares[i][j].isKnight = true;
-        }
+        this.squares[i][j].isEnemy = false;
+        this.squares[i][j].isKnight = false;
       }
     }
     console.log(this.squares);
   }
 
   public Clicked(x: number, y: number): void {
-    if (this.isToMove(x, y) == true)
+    if (this.isToMove(x, y) == true && this.squares[x][y].isEnemy == false)
     {
       for (let i: number = 0; i < 10; i++)
       {
@@ -54,12 +51,105 @@ export class SquaresComponent implements OnInit, AfterViewInit {
       this.changeToUnMoveTo(x, y);
       this.cdr$.detectChanges();
     }
-    else
+    if (this.squares[x][y].isEnemy == false && this.squares[x][y].isKnight == true)
     {
       this.isKnight(x, y);
+      this.squares[x][y].isEnemy = true;
       this.cdr$.detectChanges();
     }
+    else
+    {
+      if (this.isFirstMove)
+      {
+        this.squares[x][y].isKnight = true;
+        this.isFirstMove = false;
+        this.cdr$.detectChanges();
+      }
+    }
     
+  }
+
+  public restart(): void {
+    for (let i: number = 0; i < 10; i++)
+    {
+      for (let j: number = 0; j < 10; j++)
+      {
+        this.squares[i][j].isEnemy = false;
+        this.squares[i][j].isKnight = false;
+        this.squares[i][j].isSelected = false;
+        this.squares[i][j].isToMove = false;
+      }
+    }
+    this.isFirstMove = true;
+    this.cdr$.detectChanges();
+  }
+
+  public checkForLose(x: number, y: number): Boolean {
+    if (this.squares[x][y].isKnight == true)
+      {
+      let isLost: Boolean = true;
+      if (x - 2 >= 0 && y + 1 <=9)
+      {
+        if (this.squares[x - 2][y + 1].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x - 1 >= 0 && y + 2 <= 9)
+      {
+        if (this.squares[x - 1][y + 2].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x - 2 >= 0 && y - 1 >= 0)
+      {
+        if (this.squares[x - 2][y - 1].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x - 1 >= 0 && y - 2 >= 0)
+      {
+        if (this.squares[x - 1][y - 2].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x + 2 <= 9 && y + 1 <= 9)
+      {
+      if (this.squares[x + 2][y + 1].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x + 1 <= 9 && y + 2 <= 9)
+      {
+        if (this.squares[x + 1][y + 2].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x + 2 <= 9 && y - 1 >= 0)
+      {
+        if (this.squares[x + 2][y - 1].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      if (x + 1 <= 9 && y - 2 >= 0)
+      {
+        if (this.squares[x + 1][y - 2].isEnemy == false)
+        {
+          isLost = false;
+        }
+      }
+      return isLost;
+    }
+    else
+    {
+      return false;
+    }
   }
 
   public changeToPicked(x: number, y: number): void {

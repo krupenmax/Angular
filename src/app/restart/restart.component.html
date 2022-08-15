@@ -1,0 +1,18 @@
+<button id="restart-button" (click)="popUpWindow()">
+    
+    <div id="restart-text">RESTART</div>
+</button>
+    <div *ngIf="isPopedUp()">
+        <div class="upperBar">
+            <div class="upper-Text">
+                RESTART
+            </div>
+        </div>
+        <div class="mainBar">
+            <div class="main-Text">Are you sure?</div>
+            <div class="yes-Button" (click)="restart()"><div class="Text">YES</div></div>
+            <div class="no-Button" (click)="closeWindow()"><div class="Text">NO</div></div>
+        </div>
+        <div class="lowerBar">
+        </div>
+    </div>

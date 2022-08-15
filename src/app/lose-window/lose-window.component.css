@@ -1,0 +1,216 @@
+.messageBar {
+    position: absolute;
+    width: 780px;
+    height: 111.72px;
+    left: 0px;
+    top: 0px;
+    z-index: 1;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    background: #8543ba;
+}
+
+.messageBar-Text {
+    position: absolute;
+    left: 42.4%;
+    right: 39.29%;
+    top: 40.51%;
+    bottom: 84.51%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 30px;
+    line-height: 72px;
+    /* identical to box height */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #FFBFF5;
+    -webkit-background-clip: text;
+
+    background-clip: text;
+    text-shadow: 0px 2.07958px 4.15917px rgba(0, 0, 0, 0.14), 0px 2.07958px 2.07958px rgba(0, 0, 0, 0.12), 0px 2.07958px 4.15917px rgba(0, 0, 0, 0.2);
+}
+
+.centerBar {
+    position: absolute;
+    width: 780px;
+    height: 400.72px;
+    left: 0px;
+    top: 110px;
+    z-index: 1;
+    background: #5d3082;
+}
+
+.bored-Div {
+    position: absolute;
+    shape-outside: ellipse();
+    clip-path: circle();
+    left: 40.3%;
+    right: 5.56%;
+    top: 25px;
+    bottom: 0%;
+    z-index: 1;
+    width: 132px;
+    height: 132px;;
+    background: linear-gradient(180deg, #f8c305 0%, #f6b937 100%);
+}
+
+.lowBar  {
+    position: absolute;
+    width: 780px;
+    height: 50.72px;
+    left: 0px;
+    top: 500px;
+    z-index: 1;
+    background: #8543ba;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+.left-Eye {
+    position: absolute;
+    left: 23.04%;
+    right: 52.08%;
+    top: 29.69%;
+    bottom: 59.38%;
+    position: absolute;
+    width: 38px;
+    height: 20px;
+    shape-outside: ellipse();
+    clip-path: circle();
+    background: #FFFFFF;
+    box-shadow: 0px 2px 32px rgba(72, 14, 77, 0.2), 0px 16px 32px rgba(72, 14, 77, 0.2);
+}
+
+.left-Point-Eye {
+    position: absolute;
+    left: 30.29%;
+    shape-outside: ellipse();
+    clip-path: circle();
+    right: 58.33%;
+    top: 26.69%;
+    bottom: 64.06%;
+    width: 16px;
+    height: 11px;
+    background: linear-gradient(143.97deg, #4E280E 11.84%, #281304 92.98%);
+    box-shadow: 0px 2px 4px rgba(91, 8, 98, 0.2), 0px 4px 8px rgba(91, 8, 98, 0.4), inset 4px 4px 12px rgba(180, 107, 58, 0.4);
+}
+
+.right-Eye {
+    position: absolute;
+    left: 50.04%;
+    right: 52.08%;
+    top: 29.69%;
+    bottom: 59.38%;
+    position: absolute;
+    width: 38px;
+    height: 20px;
+    shape-outside: ellipse();
+    clip-path: circle();
+    background: #FFFFFF;
+    box-shadow: 0px 2px 8px rgba(72, 14, 77, 0.2), 0px 16px 32px rgba(72, 14, 77, 0.2);
+}
+
+.right-Point-Eye {
+    position: absolute;
+    left: 30.29%;
+    shape-outside: ellipse();
+    clip-path: circle();
+    right: 58.33%;
+    top: 26.69%;
+    bottom: 64.06%;
+    width: 16px;
+    height: 11px;
+    background: linear-gradient(143.97deg, #4E280E 11.84%, #281304 92.98%);
+    box-shadow: 0px 2px 4px rgba(91, 8, 98, 0.2), 0px 4px 8px rgba(91, 8, 98, 0.4), inset 4px 4px 12px rgba(180, 107, 58, 0.4);
+}
+
+.bored-Smile {
+    position: absolute;
+    left: 29.26%;
+    right: 26.3%;
+    top: 60.14%;
+    bottom: 34.26%;
+    border-radius: 15px;
+    background: #894819;
+    box-shadow: 0px 4px 8px rgba(72, 14, 77, 0.2), 0px 16px 32px rgba(72, 14, 77, 0.2), inset -6px -6px 32px #5A2E0E, inset 6px 6px 32px #C3631F;
+}
+
+.text-Bar {
+    position: absolute;
+    left: 38.06%;
+    right: 11.09%;
+    top: 55.07%;
+    bottom: 35.61%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 37.4325px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FCE7FF;
+
+    text-shadow: 0px 2.07958px 4.15917px rgba(0, 0, 0, 0.14), 0px 2.07958px 2.07958px rgba(0, 0, 0, 0.12), 0px 2.07958px 4.15917px rgba(0, 0, 0, 0.2);
+}
+
+.try-Again-Button {
+    position: absolute;
+    left: 26%;
+    right: 0%;
+    top: 68%;
+    bottom: 0%;
+    width: 350px;
+    height: 90px;
+    border-style: none;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #265DC7;
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+}
+
+.try-Again-Text {
+    position: absolute;
+    left: 23.98%;
+    right: 21.73%;
+    top: 18.18%;
+    bottom: 20.62%;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    font-size: 37.4325px;
+    line-height: 56px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #B6F6FF;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: white;
+    text-shadow: 2.07958px 0px 6.23875px rgba(0, 0, 0, 0.35), 0px 2.07958px 4.15917px rgba(0, 0, 0, 0.24), 0px 2.07958px 2.07958px rgba(0, 0, 0, 0.22), 0px 2.07958px 4.15917px rgba(0, 0, 0, 0.2);
+}
+
+.try-Again-Button:hover {
+    position: absolute;
+    left: 26%;
+    right: 0%;
+    top: 68%;
+    bottom: 0%;
+    width: 350px;
+    height: 90px;
+    border-style: none;
+    border-radius: 15px;
+    background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #1c4699;
+    background-blend-mode: overlay, normal;
+    box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+}
