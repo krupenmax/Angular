@@ -5,7 +5,8 @@ import { Square } from '../square';
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-squares',
   templateUrl: './squares.component.html',
-  styleUrls: ['./squares.component.css']
+  styleUrls: ['./squares.component.css'],
+  standalone: true
 })
 
 @Injectable({
@@ -50,8 +51,11 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     {
       this.isSecondMove = false;
     }
-    this.prevX = this.KnightX;
-    this.prevY = this.KnightY;
+    if (this.isToMove(x, y) == true || this.squares[x][y].isKnight == true)
+    {
+      this.prevX = this.KnightX;
+      this.prevY = this.KnightY;
+    }
     if (this.isToMove(x, y) == true && this.squares[x][y].isEnemy == false)
     {
       for (let i: number = 0; i < 10; i++)
