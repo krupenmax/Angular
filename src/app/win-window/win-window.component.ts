@@ -4,7 +4,8 @@ import { SquaresComponent } from '../squares/squares.component';
 @Component({
   selector: 'app-win-window',
   templateUrl: './win-window.component.html',
-  styleUrls: ['./win-window.component.css']
+  styleUrls: ['./win-window.component.css'],
+  standalone: true
 })
 export class WinWindowComponent implements OnInit {
 

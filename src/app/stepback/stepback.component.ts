@@ -1,10 +1,13 @@
+import { NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { SquaresComponent } from '../squares/squares.component';
 
 @Component({
   selector: 'app-stepback',
   templateUrl: './stepback.component.html',
-  styleUrls: ['./stepback.component.css']
+  styleUrls: ['./stepback.component.css'],
+  standalone: true,
+  imports: [NgIf]
 })
 export class StepbackComponent implements OnInit {
 

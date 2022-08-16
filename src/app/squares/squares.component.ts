@@ -1,12 +1,19 @@
-import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Injectable, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, ChangeDetectorRef, Component, Injectable, NgModule, OnInit } from '@angular/core';
+import { RestartComponent } from '../restart/restart.component';
 import { Square } from '../square';
+import { AppModule } from '../app.module';
+import { StepbackComponent } from '../stepback/stepback.component';
+import { LoseWindowComponent } from '../lose-window/lose-window.component';
+import { WinWindowComponent } from '../win-window/win-window.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-squares',
   templateUrl: './squares.component.html',
   styleUrls: ['./squares.component.css'],
-  standalone: true
+  standalone: true,
+  imports: [RestartComponent, StepbackComponent, LoseWindowComponent, WinWindowComponent, CommonModule]
 })
 
 @Injectable({

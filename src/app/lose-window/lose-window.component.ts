@@ -4,7 +4,8 @@ import { SquaresComponent } from '../squares/squares.component';
 @Component({
   selector: 'app-lose-window',
   templateUrl: './lose-window.component.html',
-  styleUrls: ['./lose-window.component.css']
+  styleUrls: ['./lose-window.component.css'],
+  standalone: true
 })
 export class LoseWindowComponent implements OnInit {
 

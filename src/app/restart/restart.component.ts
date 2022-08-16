@@ -1,12 +1,15 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { SquaresComponent } from '../squares/squares.component';
 import { ChangeDetectorRef } from '@angular/core';
+import { NgIf } from '@angular/common';
 
 @Component({
   changeDetection: ChangeDetectionStrategy.OnPush,
   selector: 'app-restart',
   templateUrl: './restart.component.html',
-  styleUrls: ['./restart.component.css']
+  styleUrls: ['./restart.component.css'],
+  standalone: true,
+  imports: [NgIf]
 })
 export class RestartComponent implements OnInit {
   public isPopUp = false;
