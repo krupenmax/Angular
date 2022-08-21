@@ -1,9 +1,9 @@
 #stepback-button {
     position: absolute;
-    width: 191px;
-    height: 45px;;
-    left: 350px;
-    top: -84px;
+    width: 30%;
+    height: 8%;
+    left: 35%;
+    top: -11%;
     border-style: none;
     border-radius: 16px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #265DC7;
@@ -13,10 +13,10 @@
 
 #stepback-button:hover {
     position: absolute;
-    width: 191px;
-    height: 45px;;
-    left: 350px;
-    top: -84px;
+    width: 30%;
+    height: 8%;
+    left: 35%;
+    top: -11%;
     border-style: none;
     border-radius: 16px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #265DC7;
@@ -26,10 +26,10 @@
 
 #stepback-button-locked {
     position: absolute;
-    width: 191px;
-    height: 45px;;
-    left: 350px;
-    top: -84px;
+    width: 30%;
+    height: 8%;
+    left: 35%;
+    top: -11%;
     border-style: none;
     border-radius: 16px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #112a5c;

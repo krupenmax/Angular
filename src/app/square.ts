@@ -5,4 +5,5 @@ export class Square {
     isToMove?: boolean;
     isKnight?: boolean;
     isEnemy?: boolean;
+    counter?: number;
 }

@@ -7,12 +7,12 @@
                 <div class="isToMove" *ngIf="isToMove(x,y)"></div>
                 <div *ngIf="isEnemy(x,y)">
                     <div class="enemy-piece">
-                        <div class="enemy-text">999</div>
+                        <div class="enemy-text">{{this.squares[x][y].counter}}</div>
                     </div>                    
                 </div>
                 <div *ngIf="isStartPosition(x, y)">
                     <div class="knight">
-                        <div class="knight-text">999</div>
+                        <div class="knight-text">{{this.moveCounter - 1}}   </div>
                     </div>
                 </div>
             </button></div>

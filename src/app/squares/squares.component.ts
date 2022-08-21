@@ -30,6 +30,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   public prevY: number = 0;
   public KnightX: number = 0;
   public KnightY: number = 0;
+  public moveCounter: number = 1;
 
   constructor(private readonly cdr$: ChangeDetectorRef) {
     this.squares = new Array(10);
@@ -45,6 +46,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
         this.squares[i][j].isToMove = false;
         this.squares[i][j].isEnemy = false;
         this.squares[i][j].isKnight = false;
+        this.squares[i][j].counter = 0;
       }
     }
   }
@@ -53,8 +55,12 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     return this.isFirstMove;
   } 
 
+  public checkForSecondMove(): boolean {
+    return this.isSecondMove;
+  }
+
   public Clicked(x: number, y: number): void {
-    if (this.isSecondMove == true)
+    if (this.isSecondMove == true && this.squares[x][y].isToMove == true)
     {
       this.isSecondMove = false;
     }
@@ -75,6 +81,8 @@ export class SquaresComponent implements OnInit, AfterViewInit {
       this.squares[x][y].isKnight = true;
       this.KnightX = x;
       this.KnightY = y;
+      this.squares[x][y].counter = this.moveCounter;
+      this.moveCounter++;
       this.changeToUnMoveTo(x, y);
       this.cdr$.detectChanges();
     }
@@ -86,13 +94,24 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     }
     else
     {
-      if (this.isFirstMove)
-      {
+        if (this.isFirstMove)
+        {
+          for (let i: number = 0; i < 10; i++)
+        {
+          for (let j: number = 0; j < 10; j++)
+          {
+            this.squares[i][j].isKnight = false;
+          }
+        }
         this.squares[x][y].isKnight = true;
         this.KnightX = x;
         this.KnightY = y;
-        this.isFirstMove = false;
+        this.squares[x][y].counter = this.moveCounter;
+        this.moveCounter++;
+        this.isFirstMove = false; 
+        this.squares[x][y].isEnemy = true;
         this.isSecondMove = true;
+        this.changeToPicked(x, y);
         this.cdr$.detectChanges();
       } 
     }
@@ -100,7 +119,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   }
 
   public stepback(): void {
-    if (this.isFirstMove == false && this.isSecondMove == false)
+    if (this.isFirstMove == false && this.isSecondMove == false && this.KnightX != this.prevX && this.KnightY != this.prevY)
     {
       this.changeToUnMoveTo(0, 0);
       this.squares[this.KnightX][this.KnightY].isKnight = false;
@@ -109,6 +128,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
       this.KnightX = this.prevX;
       this.KnightY = this.prevY;
       this.changeToPicked(this.prevX, this.prevY);
+      this.moveCounter--;
       this.cdr$.detectChanges();
     }
   }
@@ -125,6 +145,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
       }
     }
     this.isFirstMove = true;
+    this.moveCounter = 1;
     this.cdr$.detectChanges();
   }
 

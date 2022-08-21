@@ -24,10 +24,10 @@
 #restart-button {
     position: absolute;
     
-    left: 590px;
-    width: 191px;
-    height: 45px;
-    top: -84px;
+    width: 30%;
+    height: 8%;
+    left: 70%;
+    top: -11%;
     text-align: center;
     border-style: none;
     border-radius: 16px;
@@ -38,10 +38,10 @@
 
 #restart-button:hover {
     position: absolute;
-    left: 590px;
-    width: 191px;
-    height: 45px;
-    top: -84px;
+    width: 30%;
+    height: 8%;
+    left: 70%;
+    top: -11%;
     text-align: center;
     border-style: none;
     border-radius: 16px;
