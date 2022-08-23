@@ -1,7 +1,7 @@
 .messageBar {
     position: absolute;
-    width: 780px;
-    height: 111.72px;
+    width: 100%;
+    height: 21%;
     left: 0px;
     top: 0px;
     z-index: 1;
@@ -38,10 +38,10 @@
 
 .centerBar {
     position: absolute;
-    width: 780px;
-    height: 400.72px;
+    width: 100%;
+    height: 60%;
     left: 0px;
-    top: 110px;
+    top: 20%;
     z-index: 1;
     background: #5d3082;
 }
@@ -62,10 +62,10 @@
 
 .lowBar  {
     position: absolute;
-    width: 780px;
-    height: 50.72px;
+    width: 100%;
+    height: 20%;
     left: 0px;
-    top: 500px;
+    top: 80%;
     z-index: 1;
     background: #8543ba;
     border-bottom-left-radius: 25px;
@@ -164,12 +164,12 @@
 
 .try-Again-Button {
     position: absolute;
-    left: 26%;
+    left: 22%;
     right: 0%;
     top: 68%;
     bottom: 0%;
-    width: 350px;
-    height: 90px;
+    width: 60%;
+    height: 30%;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #265DC7;
@@ -202,12 +202,12 @@
 
 .try-Again-Button:hover {
     position: absolute;
-    left: 26%;
+    left: 22%;
     right: 0%;
     top: 68%;
     bottom: 0%;
-    width: 350px;
-    height: 90px;
+    width: 60%;
+    height: 30%;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #1c4699;

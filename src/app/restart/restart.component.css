@@ -52,10 +52,10 @@
 
 .upperBar {
     position: absolute;
-    width: 780px;
-    height: 111.72px;
+    width: 100%;
+    height: 21%;
     left: 0px;
-    top: 80px;
+    top: 0px;
     z-index: 1;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
@@ -102,17 +102,17 @@
 
 .mainBar {
     position: absolute;
-    width: 780px;
-    height: 400.72px;
+    width: 100%;
+    height: 60%;
     left: 0px;
-    top: 191px;
+    top: 20%;
     z-index: 1;
     background: #5d3082;
 }
 
 .main-Text {
     position: absolute;
-    left: 34.06%;
+    left: 31.06%;
     right: 11.09%;
     top: 10.07%;
     bottom: 35.61%;
@@ -137,8 +137,8 @@
     right: 0%;
     top: 68%;
     bottom: 0%;
-    width: 350px;
-    height: 90px;
+    width: 45%;
+    height: 25%;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #265DC7;
@@ -152,8 +152,8 @@
     right: 0%;
     top: 68%;
     bottom: 0%;
-    width: 350px;
-    height: 90px;
+    width: 45%;
+    height: 25%;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #1a3f89;
@@ -190,8 +190,8 @@
     right: 0%;
     top: 68%;
     bottom: 0%;
-    width: 350px;
-    height: 90px;
+    width: 45%;
+    height: 25%;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #c73b26;
@@ -205,8 +205,8 @@
     right: 0%;
     top: 68%;
     bottom: 0%;
-    width: 350px;
-    height: 90px;
+    width: 45%;
+    height: 25%;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #872819;
