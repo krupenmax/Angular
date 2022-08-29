@@ -148,6 +148,8 @@ export class SquaresComponent implements OnInit, AfterViewInit {
         this.squares[i].isSelected = false;
         this.squares[i].isToMove = false;
     }
+    this.prevX.splice(0, this.prevX.length);
+    this.prevY.splice(0, this.prevX.length);
     this.isFirstMove = true;
     this.moveCounter = 1;
     this.cdr$.detectChanges();

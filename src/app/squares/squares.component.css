@@ -9,6 +9,7 @@
     grid-column-gap: 10px;
     grid-row-gap: 10px;
     left: 0;
+    
     top: 0;
 }
 
@@ -20,6 +21,22 @@
     border-style: none; 
     outline: none;
     display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.square-box:after{
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    background: linear-gradient(180deg, #FFFFFF -31.99%, rgba(255, 255, 255, 0) 113.98%);
+    filter: drop-shadow(-21px 15px 50px rgba(29, 38, 70, 0.25));    
+    border-radius: 30%;
+    border-style: none; 
+    outline: none;
+    width: 100%;
     justify-content: center;
     align-items: center;
 }
