@@ -64,7 +64,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
   }
 
   public Clicked(i: number): void {
-    if (this.isFirstMove == true || this.squares[i].isToMove == true)
+    if (this.isFirstMove == true || this.squares[i].isToMove == true && this.squares[i].isEnemy == false)
       {
       if (this.isSecondMove == true && this.squares[i].isToMove == true)
       {

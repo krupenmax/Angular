@@ -5,6 +5,9 @@
     left: 0px;
     top: 0px;
     z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
     background: #8543ba;
@@ -12,10 +15,9 @@
 
 .messageBar-Text {
     position: absolute;
-    left: 44.4%;
-    right: 39.29%;
-    top: 40.51%;
-    bottom: 84.51%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -44,16 +46,19 @@
     top: 20%;
     z-index: 1;
     background: #5d3082;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .bored-Div {
     position: absolute;
     shape-outside: ellipse();
     clip-path: circle();
-    left: 42.3%;
-    right: 5.56%;
-    top: 25px;
-    bottom: 0%;
+    top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     z-index: 1;
     width: 132px;
     height: 132px;;
@@ -143,15 +148,14 @@
 
 .text-Bar {
     position: absolute;
-    left: 40.06%;
-    right: 11.09%;
-    top: 45.07%;
-    bottom: 35.61%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 37.4325px;
+    font-size: 36px;
     line-height: 56px;
     display: flex;
     align-items: center;
@@ -164,12 +168,15 @@
 
 .try-Again-Button {
     position: absolute;
-    left: 22%;
+    left: 20%;
     right: 0%;
     top: 68%;
     bottom: 0%;
     width: 60%;
     height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-style: none;
     border-radius: 15px;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #265DC7;
@@ -179,10 +186,9 @@
 
 .try-Again-Text {
     position: absolute;
-    left: 28.98%;
-    right: 21.73%;
-    top: 18.18%;
-    bottom: 20.62%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -202,7 +208,7 @@
 
 .try-Again-Button:hover {
     position: absolute;
-    left: 22%;
+    left: 20%;
     right: 0%;
     top: 68%;
     bottom: 0%;
