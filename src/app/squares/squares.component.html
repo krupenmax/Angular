@@ -1,23 +1,19 @@
-<table class="squares">
-    <app-stepback></app-stepback>
-    <app-restart></app-restart>
-    <tr *ngFor="let y of [0,1,2,3,4,5,6,7,8,9]">
-        <td *ngFor="let x of [0,1,2,3,4,5,6,7,8,9]">
-            <div><button class="square-field" (click) = "Clicked(x, y)">
-                <div class="isToMove" *ngIf="isToMove(x,y)"></div>
-                <div *ngIf="isEnemy(x,y)">
-                    <div class="enemy-piece">
-                        <div class="enemy-text">{{this.squares[x][y].counter}}</div>
-                    </div>                    
+<app-stepback></app-stepback>
+<app-restart></app-restart>
+<div class="grid-container">
+    <button class="square-field" *ngFor="let square of squares" (click)="Clicked(getIndex(square.x, square.y))">
+        <div class="isToMove" *ngIf="isToMove(getIndex(square.x, square.y))"></div>
+            <div *ngIf="isEnemy(getIndex(square.x, square.y))">
+                <div class="enemy-piece">
+                    <div class="enemy-text">{{this.findByCoordinates(square.x, square.y).counter}}</div>
+                </div>                    
+            </div>
+            <div *ngIf="isStartPosition(getIndex(square.x, square.y))">
+                <div class="knight">
+                    <div class="knight-text">{{this.moveCounter - 1}}   </div>
                 </div>
-                <div *ngIf="isStartPosition(x, y)">
-                    <div class="knight">
-                        <div class="knight-text">{{this.moveCounter - 1}}   </div>
-                    </div>
-                </div>
-            </button></div>
-            <div *ngIf="checkForWin(x,y)"><app-win-window></app-win-window></div>
-            <div *ngIf="checkForLose(x,y)"><app-lose-window></app-lose-window></div>
-        </td>
-    </tr>
-</table>
+        </div>
+        </button>
+</div>
+<div *ngIf="checkForWin()"><app-win-window></app-win-window></div>
+<div *ngIf="checkForLose()"><app-lose-window></app-lose-window></div>
