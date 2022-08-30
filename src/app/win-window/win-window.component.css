@@ -74,13 +74,13 @@
 
 .left-Eye {
     position: absolute;
-    left: 23.04%;
+    left: 35.04%;
     right: 52.08%;
     top: 29.69%;
     bottom: 59.38%;
     position: absolute;
-    width: 38px;
-    height: 20px;
+    width: 15%;
+    height: 15%;
     shape-outside: ellipse();
     clip-path: circle();
     background: #FFFFFF;
@@ -95,8 +95,8 @@
     right: 58.33%;
     top: 26.69%;
     bottom: 64.06%;
-    width: 16px;
-    height: 11px;
+    width: 50%;
+    height: 50%;
     background: linear-gradient(143.97deg, #4E280E 11.84%, #281304 92.98%);
     box-shadow: 0px 2px 4px rgba(91, 8, 98, 0.2), 0px 4px 8px rgba(91, 8, 98, 0.4), inset 4px 4px 12px rgba(180, 107, 58, 0.4);
 }
@@ -108,8 +108,8 @@
     top: 29.69%;
     bottom: 59.38%;
     position: absolute;
-    width: 38px;
-    height: 20px;
+    width: 15%;
+    height: 15%;
     shape-outside: ellipse();
     clip-path: circle();
     background: #FFFFFF;
@@ -124,11 +124,11 @@
     right: 58.33%;
     top: 26.69%;
     bottom: 64.06%;
-    width: 16px;
-    height: 11px;
+    width: 50%;
+    height: 50%;
     background: linear-gradient(143.97deg, #4E280E 11.84%, #281304 92.98%);
     box-shadow: 0px 2px 4px rgba(91, 8, 98, 0.2), 0px 4px 8px rgba(91, 8, 98, 0.4), inset 4px 4px 12px rgba(180, 107, 58, 0.4);
-}
+}   
 
 .bored-Smile {
     position: absolute;
