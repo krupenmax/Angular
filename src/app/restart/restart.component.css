@@ -2,7 +2,6 @@
     position: absolute;
     width: 100%;
     height: 100%;
-
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 800;
@@ -28,7 +27,7 @@
 #restart-button {
     position: absolute;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     text-align: center;
     align-items: center;
     width: 30%;
@@ -55,7 +54,7 @@
     border-style: none;
     border-radius: 16px;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     text-align: center;
     align-items: center;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #F96E03;
@@ -74,7 +73,7 @@
     border-style: none;
     border-radius: 16px;
     display: flex;
-    justify-content: right;
+    justify-content: center;
     text-align: center;
     align-items: center;
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #dd6103;
