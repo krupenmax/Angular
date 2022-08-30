@@ -19,6 +19,12 @@
 
 }
 
+@media screen and (max-height: 400px) {
+    #restart-text {
+        font-size: 10px;
+    }
+}
+
 #restart-button {
     position: absolute;
     display: flex;
@@ -26,9 +32,9 @@
     text-align: center;
     align-items: center;
     width: 30%;
-    height: 8%;
+    height: 7%;
+    top: -20%;
     left: 70%;
-    top: -11%;
     text-align: center;
     border-style: none;
     border-radius: 16px;
@@ -36,14 +42,15 @@
     background-blend-mode: overlay, normal;
     box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
     outline: none;
+    min-height: 25px;
 }
 
 #restart-button:hover {
     position: absolute;
     width: 30%;
-    height: 8%;
+    height: 7%;
+    top: -20%;
     left: 70%;
-    top: -11%;
     text-align: center;
     border-style: none;
     border-radius: 16px;
@@ -54,14 +61,15 @@
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #F96E03;
     background-blend-mode: overlay, normal;
     box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+    min-height: 25px;
 }
 
 #restart-button:active {
     position: absolute;
     width: 30%;
-    height: 8%;
+    height: 7%;
+    top: -20%;
     left: 70%;
-    top: -11%;
     text-align: center;
     border-style: none;
     border-radius: 16px;
@@ -72,6 +80,7 @@
     background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 70%), #dd6103;
     background-blend-mode: overlay, normal;
     box-shadow: 0px 4.15917px 8.31834px rgba(0, 0, 0, 0.14), 0px 8.31834px 10.3979px rgba(0, 0, 0, 0.12), 0px 2.07958px 20.7958px rgba(0, 0, 0, 0.2);
+    min-height: 25px;
 }
 
 .upperBar {

@@ -153,6 +153,7 @@ export class SquaresComponent implements OnInit, AfterViewInit {
     this.isFirstMove = true;
     this.moveCounter = 1;
     this.cdr$.detectChanges();
+    console.log(this.squares);
   }
 
   public checkForWin(): boolean {
